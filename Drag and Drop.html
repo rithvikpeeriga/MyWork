@@ -1,0 +1,134 @@
+<html>
+<head>
+<title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ 
+<script type="text/javascript">
+ 
+$("document").ready(function(){
+
+$("#draggable").draggable({
+  
+              
+            containment: "#contentwrap",
+			revert: function(event,ui){
+			return event;
+			
+			
+			}
+  });
+   
+  
+ 
+ 
+ 
+ $( function(event,ui) {
+ 
+       $( "#draggable" ).draggable();
+      
+       $( "#droppable" ).droppable({
+      
+        drop: function() {
+      
+        $( this )
+		$("#heading").css({'background-color':'brown','color':'white'})
+		.html("Ahh  that's better.Thank you")
+          
+        .html( img);
+        } // ends drop function 
+       
+        }); // ends droppable
+	
+	    $('#draggable').css( 'cursor', 'pointer' );
+  
+        }); // ends function 
+ 
+ 
+        }); // ends ready 
+ 
+ </script>
+
+<style type="text/css">
+
+body {
+	text-align: center;
+	font-family: comic sans ms;
+	color: darkred;
+	background-image: url("http://newton.ncc.edu/gansonj/ite254/img/turtle_bkg.jpg");
+}
+
+#pagewrap {
+	border: 6px #0033CC solid;
+	width: 750px;
+	margin: 40px auto 0px auto;
+	padding: 30px;
+	border-radius: 15px;
+	background-color: lightblue;
+	background-image: url("http://newton.ncc.edu/gansonj/ite254/img/fish_bkg.jpg");
+}
+
+#Topheading {
+	font-family: arial;
+	font-size: 1.75em;
+	font-weight: bold;
+	margin-bottom: 15px;
+	background-color: tan;
+	border-radius: 25px;
+	padding: 10px 0px 10px 0px;
+}
+
+#contentwrap {
+	background-color: white;	
+	border: 6px #0033CC double;
+	border-radius: 15px;
+	padding: 20px;
+	height: 600px;
+}
+
+#heading {
+	font-family: arial;
+	font-size: 1.75em;
+	font-weight: bold;
+	background-color: lightblue;
+	border-radius: 25px;
+	margin-bottom: 15px;
+	padding: 10px 0px 10px 0px;
+}
+#draggable{
+display:inline-block;
+position:relative;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="pagewrap">
+
+	<div id="Topheading">Drag and drop the fish into the aquarium</div>
+
+	<div id="contentwrap">
+		
+		<div id="heading">Get me in the water, quickly!!</div>
+		
+		<div id="droppable">
+			<img src="http://newton.ncc.edu/gansonj/ite254/img/aquarium.jpg" />
+		</div>
+		
+		
+		<div id="draggable">
+			<img src="http://newton.ncc.edu/gansonj/ite254/img/fish.png" />
+		</div>
+		
+		
+	</div> <!-- ends div#contentwrap -->
+
+</div> <!-- ends div#pagewrap -->
+
+</body>
+</html>
+
+
